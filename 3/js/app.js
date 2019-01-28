@@ -22,7 +22,7 @@ console.groupEnd("UPDATE");
 
 // DELETE  для массивов
 // Это значение удалит в конце массива последний элемент и веренет его
-ARRAY.pull;
+ARRAY.pop();
 // Это значение удалит в начале массива первый элемент и веренет его
 ARRAY.shift;
 console.group("DELETE");
