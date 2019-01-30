@@ -12,6 +12,7 @@ console.log(digits); // [2,5,8,11]
 
 // А это наиболее частый паттерн использования map
 const root = document.querySelector("#root");
+const table = document.querySelector("#table")
 
 const arr = ["Home", "Contacts", "About"];
 const items = arr => arr.map(e => `<li>${e}</li>`).join("");
@@ -25,3 +26,23 @@ root.innerHTML = `<ul>
 // создайте таблицу в html, добавьте id таблице и затем по аналогии с
 // const root = document.querySelector("#root"); добавляйте в таблицу результаты
 // + 10, -10, *10, /10, %10, **2
+
+const addTen = even.map(element => element + 10);
+const minusTen = even.map(element => element - 10);
+const multiplyByTen = even.map(element => element * 10);
+const divideByTen = even.map(element => element / 10);
+const remainingFromDivision = even.map(element => element % 10);
+const squareRoot = even.map(element => element ** 2);
+
+const toHTML = arr => arr.map(e => `<td>${e}</td>`).join("");
+const list = arr => arr.map(e => `<td>${e}</td>`).join("");
+
+table.innerHTML = `
+<tr><td></td>${list(even)}</tr>
+<tr><td>+10</td>${toHTML(addTen)}</tr>
+<tr><td>-10</td>${toHTML(minusTen)}</tr>
+<tr><td>*10</td>${toHTML(multiplyByTen)}</tr>
+<tr><td>/10</td>${toHTML(divideByTen)}</tr>
+<tr><td>%10</td>${toHTML(remainingFromDivision)}</tr>
+<tr><td>**2</td>${toHTML(squareRoot)}</tr>
+`;
